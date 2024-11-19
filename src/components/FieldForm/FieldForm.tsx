@@ -2,7 +2,7 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { v4 as uuidv4 } from "uuid";
-import { FieldData } from "../types";
+import { FieldData } from "../../types";
 
 interface FieldFormProps {
   addField: (fieldData: FieldData) => void;
