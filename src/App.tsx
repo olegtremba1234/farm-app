@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import FieldForm from "./components/FieldForm";
+import FieldForm from "./components/FieldForm/FieldForm";
 import { FieldData } from "./types";
-import WeatherComponent from "./components/WeatherComponent";
-import FieldListTable from "./components/FIeldListTable";
-import YieldCalculatorTable from "./components/YieldCalculatorTable";
+import Header from "./components/Header/Header";
+import FieldListTableWithFilters from "./components/FieldListTable/FieldListTableWithFilters";
 
 const App: React.FC = () => {
   const [fields, setFields] = useState<FieldData[]>([]);
@@ -13,12 +12,13 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center bg-gray-100 p-5">
-      <FieldForm addField={addField} />
-      <FieldListTable fields={fields} />
-      <YieldCalculatorTable fields={fields} />
-      <WeatherComponent />
-    </div>
+    <>
+      <Header />
+      <main className="min-h-screen w-full flex flex-col items-center bg-gray-100 p-5 pt-8">
+        <FieldForm addField={addField} />
+        <FieldListTableWithFilters fields={fields} />
+      </main>
+    </>
   );
 };
 
