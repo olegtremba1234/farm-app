@@ -48,7 +48,7 @@ const Weather: React.FC = () => {
           temperatureMin: data.main.temp_min,
           temperatureMax: data.main.temp_max,
           description: data.weather[0].description,
-          icon: `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`,
+          icon: `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`,
           time: data.dt,
         };
 
@@ -68,7 +68,7 @@ const Weather: React.FC = () => {
 
     try {
       const response = await fetch(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${apiKey}`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${apiKey}`
       );
 
       if (!response.ok) {
@@ -88,7 +88,7 @@ const Weather: React.FC = () => {
   useEffect(() => {
     const fetchDefaultWeather = async () => {
       const response = await fetch(
-        `http://api.openweathermap.org/geo/1.0/direct?q=Київ&limit=1&appid=${apiKey}`
+        `https://api.openweathermap.org/geo/1.0/direct?q=Київ&limit=1&appid=${apiKey}`
       );
       const data: CitySearchResult[] = await response.json();
       if (data[0]) {
