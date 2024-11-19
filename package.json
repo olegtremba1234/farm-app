@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://olegtremba1234/github.io/farm-app",
+  "homepage": "https://olegtremba1234/github.io/farm-app/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
